@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export function Filter() {
+export function Search() {
   return (
     <div style={{ flexDirection: 'row', display: 'flex' }}>
       <img />

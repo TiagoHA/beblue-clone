@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   * {
@@ -27,6 +27,16 @@ export default createGlobalStyle`
     font-family: Gilroy,Arial,Helvetica,sans-serif;
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    border: none;
+    background-color: #c1c7cc;
+    padding: 5px;
+  }
+
   button {
     cursor: pointer;
   }
@@ -35,4 +45,4 @@ export default createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
-`
+`;
