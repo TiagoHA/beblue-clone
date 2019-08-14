@@ -14,7 +14,11 @@ export default createGlobalStyle`
 
   body {
     background: #f2f3f5;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body, input, button {
@@ -25,5 +29,10 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
   }
 `
