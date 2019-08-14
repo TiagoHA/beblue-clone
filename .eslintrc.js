@@ -4,9 +4,7 @@ module.exports = {
     es6: true,
   },
   extends: [
-    'airbnb',
-    'prettier',
-    'prettier/react'
+    // 'airbnb',
   ],
   globals: {
     Atomics: 'readonly',
@@ -20,16 +18,9 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    'prettier'
-  ],
+  plugins: ['react'],
   rules: {
-    'prettier/prettier': 'error',
-    'react/jsx-filename-extension': [
-      'warn',
-      { extensions: ['.jsx', '.js'] }
-    ],
-    'import/prefer-default-export': 'off'
+    'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
+    'import/prefer-default-export': 'off',
   },
-};
+}
