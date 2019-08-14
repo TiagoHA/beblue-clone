@@ -1,19 +1,33 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
   justify-content: row;
   margin: 10px;
-`
+
+  border-bottom-color: #eff1f2;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+`;
 
 export const Col = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex: ${props => (props.full ? 1 : 0)};
-`
+`;
 
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
   flex: ${props => (props.full ? 1 : 0)};
-`
+`;
+
+export const Link = styled.a`
+  text-decoration: none;
+  color: #078fff;
+`;
+
+export const Name = styled.p`
+  color: #47515b;
+`;
