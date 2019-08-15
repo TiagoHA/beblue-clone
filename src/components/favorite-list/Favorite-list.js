@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children } from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { Container, Col, Link, Name } from './styles'
@@ -8,7 +8,22 @@ import { TagsList } from './components/tag/Tag'
 
 export function FavoritesList() {
   const { favorites } = useSelector(state => state.favoritesStore)
-  console.log('Favorites: ', favorites)
+  const { search } = useSelector(state => state.searchStore)
+
+  if (search.length) {
+    const hasSearch = tag => {
+      if (tag.search(search.toUpperCase()) >= 0) return tag
+    }
+    const favoritesWithSearch = fav => ({
+      ...fav,
+      search: fav.tags.filter(hasSearch).length > 0,
+    })
+    const newFavorites = favorites.map(favoritesWithSearch).filter(fav => fav.search);
+
+    return newFavorites.map(favorite => (
+      <FavoriteTile key={String(favorite.id)} {...favorite} />
+    ))
+  }
 
   return favorites.map(favorite => (
     <FavoriteTile key={String(favorite.id)} {...favorite} />

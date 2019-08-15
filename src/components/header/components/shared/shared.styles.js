@@ -1,6 +1,6 @@
 import lupa from '../../../../assets/SVG/Lupa copy.svg'
 import add from '../../../../assets/SVG/Adicionar.svg'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -22,4 +22,9 @@ export const Input = styled.input`
   flex: 1;
   margin: 0 10px;
   padding: 10px;
+  line-height: 18px;
+  ${props => props.error && css`
+    border-color: #b22f34;
+  `}
+
 `
