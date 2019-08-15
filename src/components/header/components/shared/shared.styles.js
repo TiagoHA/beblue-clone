@@ -23,8 +23,9 @@ export const Input = styled.input`
   margin: 0 10px;
   padding: 10px;
   line-height: 18px;
-  ${props => props.error && css`
-    border-color: #b22f34;
-  `}
-
+  ${props =>
+    props.error &&
+    css`
+      border-color: #b22f34;
+    `}
 `

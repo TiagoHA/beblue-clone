@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ButtonDelete = styled.button`
   background-color: transparent;
@@ -18,4 +18,4 @@ export const ButtonDelete = styled.button`
     font-weight: 600;
     font-size: 12px;
   }
-`;
+`

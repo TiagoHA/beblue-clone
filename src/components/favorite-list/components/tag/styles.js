@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const TagContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 5px;
-`;
+`
 
 export const ButtonDelete = styled.div`
   background-color: #1f68c1;
@@ -39,4 +39,4 @@ export const ButtonDelete = styled.div`
       width: 8px;
     }
   }
-`;
+`

@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 export function Search() {
   const { toggleSearch, onChangeSearch } = Actions()
   const { search } = useSelector(state => state.searchStore)
-  const clearSearch = () => onChangeSearch('');
+  const clearSearch = () => onChangeSearch('')
 
   return (
     <Container>
