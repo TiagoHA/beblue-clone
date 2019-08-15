@@ -66,11 +66,12 @@ export default function Favorites(state = INITIAL_STATE, action) {
 
       const [selectedFavorite] = state.favorites.filter(fav => fav.id === favorite_id)
       const removedSelectedTag = selectedFavorite.tags.filter(tg => tg !== tag_del)
-      const favoriteWithoutSelectedTag = { ...selectedFavorite, tags: removedSelectedTag };
+      const favoriteWithoutSelectedTag = { ...selectedFavorite, tags: removedSelectedTag }
 
-      const favoritesWithoutSelectedId = state.favorites.filter(fav => fav.id !== favorite_id);
-
-      const favorites = [...favoritesWithoutSelectedId, favoriteWithoutSelectedTag]
+      const favorites = state.favorites.map(fav => {
+        if (fav.id === favorite_id) return favoriteWithoutSelectedTag
+        return fav
+      })
 
       return {
         ...state,
