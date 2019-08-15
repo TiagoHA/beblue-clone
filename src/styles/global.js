@@ -27,6 +27,10 @@ export default createGlobalStyle`
     font-family: Gilroy,Arial,Helvetica,sans-serif;
   }
 
+  input {
+    border: 1px solid #a2acb4;
+  }
+
   a {
     text-decoration: none;
   }
