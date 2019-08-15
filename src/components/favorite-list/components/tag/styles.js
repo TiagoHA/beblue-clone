@@ -36,6 +36,7 @@ export const ButtonDelete = styled.div`
     img {
       margin-left: 7px;
       cursor: pointer;
+      width: 8px;
     }
   }
 `;
