@@ -18,16 +18,12 @@ export function FavoritesList() {
       ...fav,
       search: fav.tags.filter(hasSearch).length > 0,
     })
-    const newFavorites = favorites.map(favoritesWithSearch).filter(fav => fav.search);
+    const newFavorites = favorites.map(favoritesWithSearch).filter(fav => fav.search)
 
-    return newFavorites.map(favorite => (
-      <FavoriteTile key={String(favorite.id)} {...favorite} />
-    ))
+    return newFavorites.map(favorite => <FavoriteTile key={String(favorite.id)} {...favorite} />)
   }
 
-  return favorites.map(favorite => (
-    <FavoriteTile key={String(favorite.id)} {...favorite} />
-  ))
+  return favorites.map(favorite => <FavoriteTile key={String(favorite.id)} {...favorite} />)
 }
 
 function FavoriteTile({ id, name, link, tags }) {

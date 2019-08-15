@@ -45,9 +45,7 @@ export default function Search(state = INITIAL_STATE, action) {
 
 export function Actions() {
   const dispatch = useDispatch()
-  const { visibility: storeVisibility } = useSelector(
-    state => state.searchStore,
-  )
+  const { visibility: storeVisibility } = useSelector(state => state.searchStore)
 
   const Actions = {
     onChangeSearch: search =>
