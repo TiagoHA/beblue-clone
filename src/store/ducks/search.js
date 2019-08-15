@@ -1,77 +1,85 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux'
 
 export const Types = {
-  ADD_FAVORITE: "favorites/ADD_FAVORITE",
-  DELETE_FAVORITE: "favorites/DELETE_FAVORITE",
-  DELETE_TAG: "favorites/DELETE_TAG"
-};
+  SEARCH_BOOKMARKS: 'search/SEARCH_BOOKMARKS',
+  CLEAR_SEARCH: 'search/CLEAR_SEARCH',
+  VISIBLE: 'search/VISIBLE',
+}
 
 const INITIAL_STATE = {
-  favorites: [
-    {
-      id: 1,
-      name: "Crédito",
-      link: "www.credito.com.br",
-      tags: ["CRÉDITO"]
-    },
-    {
-      id: 2,
-      name: "wALLET",
-      link: "www.wallet.com.br/wallet",
-      tags: ["WALLET", "CASHBACK", "SALDO"]
-    }
-  ]
-};
+  search: '',
+  visibility: true,
+}
 
-export default function player(state = INITIAL_STATE, action) {
+export default function Search(state = INITIAL_STATE, action) {
   console.log("State: ", state);
   console.log("Action: ", action);
 
   switch (action.type) {
-    case Types.ADD_FAVORITE: {
-      const { favorite } = action.payload;
-      const id = state.favorites.length + 1;
-      const favoriteWithId = { ...favorite, id };
+    case Types.SEARCH_BOOKMARKS: {
+      const { search } = action.payload
 
       return {
         ...state,
-        favorites: [...state.favorites, favoriteWithId]
-      };
+        search,
+      }
     }
 
-    case Types.DELETE_FAVORITE: {
+    case Types.CLEAR_SEARCH: {
       return {
-        ...state
-      };
+        ...state,
+        search: '',
+      }
+    }
+
+    case Types.VISIBLE: {
+      const { visibility } = action.payload
+
+      return {
+        ...state,
+        visibility,
+      }
     }
 
     default:
-      return state;
+      return state
   }
 }
 
 export function Actions() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+  const { visibility: storeVisibility } = useSelector(
+    state => state.searchStore,
+  )
 
   const Actions = {
-    addFavorite: favorite =>
+    search: search =>
       dispatch({
-        type: Types.ADD_FAVORITE,
-        payload: { favorite }
+        type: Types.SEARCH_BOOKMARKS,
+        payload: { search },
       }),
 
-    deleteFavorite: favorite_id =>
+    clearSearch: () =>
       dispatch({
-        type: Types.DELETE_FAVORITE,
-        payload: { favorite_id }
+        type: Types.CLEAR_SEARCH,
       }),
 
-    deleteTag: ({ id, tag }) =>
-      dispatch({
-        type: Types.DELETE_TAG,
-        payload: { id, tag }
+    toggleSearch: visibility => {
+      Actions.clearSearch();
+
+      if (visibility === true || visibility === false) {
+        return dispatch({
+          type: Types.VISIBLE,
+          payload: { visibility },
+        })
+      }
+
+      return dispatch({
+        type: Types.VISIBLE,
+        payload: { visibility: !storeVisibility },
       })
-  };
+    },
+  }
 
-  return Actions;
+  return Actions
 }

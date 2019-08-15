@@ -32,6 +32,6 @@ export const Content = styled.div`
 `
 
 export const Logo = styled.img.attrs({ alt: 'logo', src: logo })`
-  margin: 10px 10px 20px 10px;
+  margin: 10px 10px 30px 10px;
   align-self: flex-start;
 `

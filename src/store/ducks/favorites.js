@@ -23,7 +23,7 @@ const INITIAL_STATE = {
   ]
 };
 
-export default function player(state = INITIAL_STATE, action) {
+export default function Favorites(state = INITIAL_STATE, action) {
   console.log("State: ", state);
   console.log("Action: ", action);
 
