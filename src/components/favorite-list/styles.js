@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   justify-content: row;
-  margin: 10px;
-  padding-bottom: 5px;
+  margin: 10px 10px 5px 10px;
+  padding-bottom: 10px;
 
   border-bottom-color: #eff1f2;
   border-bottom-width: 2px;

@@ -2,18 +2,23 @@ import React from 'react'
 import { Magnifier, Add } from './styles'
 import { Container, Input } from '../shared/shared.styles'
 import { Actions } from '../../../../store/ducks/search'
+import { useSelector, useDispatch } from 'react-redux'
 
 export function Search() {
-  const { toggleSearch } = Actions()
+  const { toggleSearch, onChangeSearch } = Actions()
+  const { search } = useSelector(state => state.searchStore)
+  const clearSearch = () => onChangeSearch('');
 
   return (
     <Container>
-      <Magnifier onClick={() => toggleSearch(false)} />
-      <Add />
+      <Add onClick={() => toggleSearch(false)} />
+      <Magnifier onClick={clearSearch} />
 
-      <Input placeholder="Title" />
-      <Input placeholder="Link" />
-      <Input placeholder="Tags" />
+      <Input
+        placeholder="Filter by Tag"
+        onChange={e => onChangeSearch(e.target.value)}
+        value={search}
+      />
     </Container>
   )
 }

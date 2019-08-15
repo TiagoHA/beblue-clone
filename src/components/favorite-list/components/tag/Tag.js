@@ -5,12 +5,10 @@ import { TagContainer, ButtonDelete } from './styles'
 import styled from 'styled-components'
 
 export function TagsList({ tags, id }) {
-  console.log('tags: ', tags, ' - id: ', id)
-
   return (
     <TagContainer>
       {tags.map(tag => (
-        <Tag key={`${tag}-${id}`} tag={tag} id={id} />
+        <Tag key={tag} tag={tag} id={id} />
       ))}
     </TagContainer>
   )
@@ -22,7 +20,7 @@ export function Tag({ id, tag }) {
   return (
     <ButtonDelete>
       <p>{tag}</p>
-      <button onClick={() => deleteTag({ id, tag })}>
+      <button onClick={() => deleteTag({ favorite_id: id, tag })}>
         <img src={Del} alt="delete" />
       </button>
     </ButtonDelete>
