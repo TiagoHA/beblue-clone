@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import logo from '../../assets/SVG/logo.svg'
 
 export const Container = styled.div`
   display: flex;
@@ -30,6 +31,7 @@ export const Content = styled.div`
   }
 `
 
-export const Title = styled.h1`
-  margin-bottom: 30px;
+export const Logo = styled.img.attrs({ alt: 'logo', src: logo })`
+  margin: 10px 10px 20px 10px;
+  align-self: flex-start;
 `

@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: row;
   margin: 10px;
+  padding-bottom: 5px;
 
   border-bottom-color: #eff1f2;
   border-bottom-width: 2px;
@@ -26,8 +27,11 @@ export const Row = styled.div`
 export const Link = styled.a`
   text-decoration: none;
   color: #078fff;
+  margin-bottom: 5px;
 `;
 
 export const Name = styled.p`
   color: #47515b;
+  font-size: 19px;
+  margin-bottom: 5px;
 `;

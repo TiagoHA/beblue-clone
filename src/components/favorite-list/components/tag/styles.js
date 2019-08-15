@@ -23,6 +23,7 @@ export const ButtonDelete = styled.div`
     font-size: 10px;
     text-align: center;
     align-items: center;
+    padding-right: 5px;
   }
 
   button {

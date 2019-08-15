@@ -16,6 +16,6 @@ export const ButtonDelete = styled.button`
     color: #bdc4c9;
     padding-top: 2px;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 12px;
   }
 `;
