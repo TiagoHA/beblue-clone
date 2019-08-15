@@ -12,9 +12,6 @@ const INITIAL_STATE = {
 }
 
 export default function Search(state = INITIAL_STATE, action) {
-  console.log("State: ", state);
-  console.log("Action: ", action);
-
   switch (action.type) {
     case Types.SEARCH_BOOKMARKS: {
       const { search } = action.payload
@@ -53,7 +50,7 @@ export function Actions() {
   )
 
   const Actions = {
-    search: search =>
+    onChangeSearch: search =>
       dispatch({
         type: Types.SEARCH_BOOKMARKS,
         payload: { search },
@@ -65,7 +62,7 @@ export function Actions() {
       }),
 
     toggleSearch: visibility => {
-      Actions.clearSearch();
+      Actions.clearSearch()
 
       if (visibility === true || visibility === false) {
         return dispatch({
