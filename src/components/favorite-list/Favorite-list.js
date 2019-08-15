@@ -1,8 +1,6 @@
-import React, { Children } from 'react'
-import styled from 'styled-components'
-import { useSelector, useDispatch } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { Container, Col, Link, Name } from './styles'
-import { Actions } from '../../store/ducks/favorites'
 import { DeleteFavorite } from './components/delete-favorite/DeleteFavorite'
 import { TagsList } from './components/tag/Tag'
 

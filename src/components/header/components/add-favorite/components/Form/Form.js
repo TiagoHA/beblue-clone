@@ -10,7 +10,7 @@ export function FavoriteForm({ onSubmit }) {
     setTimeout(form.reset)
   }
 
-  const { form, handleSubmit, values, pristine, submitting } = useForm({
+  const { form, handleSubmit, submitting } = useForm({
     onSubmit: onSubmitAndReset,
     validate,
     initialValues,

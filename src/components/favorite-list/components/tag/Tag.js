@@ -2,7 +2,6 @@ import React from 'react'
 import { Actions } from '../../../../store/ducks/favorites'
 import Del from '../../../../assets/SVG/X.svg'
 import { TagContainer, ButtonDelete } from './styles'
-import styled from 'styled-components'
 
 export function TagsList({ tags, id }) {
   return (
