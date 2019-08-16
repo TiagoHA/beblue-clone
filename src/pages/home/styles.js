@@ -7,9 +7,14 @@ export const Container = styled.div`
   max-width: 1000px;
   border-radius: 4px;
   padding: 25px;
-  margin: 50px auto;
+  margin: 30px auto;
   display: flex;
   flex: 1;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    margin: 0 auto;
+  }
 `
 
 export const Content = styled.div`
@@ -22,6 +27,10 @@ export const Content = styled.div`
   flex: 1;
   width: 100%;
   height: 100%;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 
   h1 {
     font-size: 20px;

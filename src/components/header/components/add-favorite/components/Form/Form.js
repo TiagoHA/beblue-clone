@@ -1,8 +1,7 @@
 import React from 'react'
 import { useForm, useField } from 'react-final-form-hooks'
 import { Input } from '../../../shared/shared.styles'
-import { Form, FormButton } from './styles'
-import { Add } from '../../styles'
+import { Form } from './styles'
 
 export function FavoriteForm({ onSubmit }) {
   const onSubmitAndReset = values => {
@@ -11,7 +10,7 @@ export function FavoriteForm({ onSubmit }) {
     setTimeout(form.initialize)
   }
 
-  const { form, handleSubmit, submitting } = useForm({
+  const { form, handleSubmit } = useForm({
     onSubmit: onSubmitAndReset,
     validate,
     initialValues,
