@@ -1,8 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Container, Col, Link, Name } from './styles'
-import { DeleteFavorite } from './components/delete-favorite/DeleteFavorite'
-import { TagsList } from './components/tag/Tag'
+import { FavoriteTile } from './components/favorite-tile/FavoriteTile'
 
 export function FavoritesList() {
   const { favorites } = useSelector(state => state.favoritesStore)
@@ -22,19 +20,4 @@ export function FavoritesList() {
   }
 
   return favorites.map(favorite => <FavoriteTile key={String(favorite.id)} {...favorite} />)
-}
-
-function FavoriteTile({ id, name, link, tags }) {
-  return (
-    <Container>
-      <Col full>
-        <Name>{name}</Name>
-        <Link href={link}>{link}</Link>
-        <TagsList id={id} tags={tags} />
-      </Col>
-      <Col>
-        <DeleteFavorite id={id} />
-      </Col>
-    </Container>
-  )
 }
