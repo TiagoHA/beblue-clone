@@ -8,6 +8,12 @@ export const ButtonDelete = styled.button`
   justify-content: space-between;
   min-width: 60px;
 
+  @media (max-width: 768px) {
+    width: max-content;
+    align-self: flex-end;
+    margin-bottom: 5px;
+  }
+
   img {
     margin-right: 10px;
   }

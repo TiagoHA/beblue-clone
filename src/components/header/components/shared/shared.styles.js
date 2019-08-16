@@ -7,6 +7,11 @@ export const Container = styled.div`
   flex-direction: row;
   padding: 10px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 5px 0;
+  }
 `
 
 export const Icon = styled.img.attrs({ alt: 'search', src: lupa })`
@@ -29,4 +34,14 @@ export const Input = styled.input`
     css`
       border: 1px solid #b22f34;
     `}
+`
+
+export const Icons = styled.div`
+  flex-direction: row;
+  display: flex;
+
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+    justify-content: space-evenly;
+  }
 `
