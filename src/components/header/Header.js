@@ -6,5 +6,5 @@ import { useSelector } from 'react-redux'
 export function Header() {
   const { visibility } = useSelector(state => state.searchStore)
 
-  return <>{visibility ? <Search /> : <AddFavorite />}</>
+  return visibility ? <Search /> : <AddFavorite />
 }
