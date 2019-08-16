@@ -7,7 +7,6 @@ export function FavoriteForm({ onSubmit }) {
   const onSubmitAndReset = values => {
     onSubmit(values)
     setTimeout(form.reset)
-    setTimeout(form.initialize)
   }
 
   const { form, handleSubmit } = useForm({
