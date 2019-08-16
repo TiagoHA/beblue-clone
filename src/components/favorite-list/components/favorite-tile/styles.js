@@ -6,7 +6,6 @@ export const Container = styled.div`
   margin: 10px 10px 5px 10px;
   padding-bottom: 10px;
   min-height: 70px;
-  width: 100%;
   max-width: 100%;
 
   border-bottom-color: #eff1f2;
