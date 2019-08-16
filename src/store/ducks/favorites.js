@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux'
-import { Actions as SearchActions } from './search'
 
 export const Types = {
   ADD_FAVORITE: 'favorites/ADD_FAVORITE',
@@ -86,7 +85,6 @@ export default function Favorites(state = INITIAL_STATE, action) {
 
 export function Actions() {
   const dispatch = useDispatch()
-  const { clearSearch } = SearchActions()
 
   const Actions = {
     addFavorite: favorite => {
@@ -94,7 +92,6 @@ export function Actions() {
         type: Types.ADD_FAVORITE,
         payload: { favorite },
       })
-      clearSearch()
     },
 
     deleteFavorite: favorite_id =>

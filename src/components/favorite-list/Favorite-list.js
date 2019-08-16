@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { FavoriteTile } from './components/favorite-tile/FavoriteTile'
+import { Content } from './styles'
 
 export function FavoritesList() {
   const { favorites } = useSelector(state => state.favoritesStore)
@@ -16,8 +17,18 @@ export function FavoritesList() {
     })
     const newFavorites = favorites.map(favoritesWithSearch).filter(fav => fav.search)
 
-    return newFavorites.map(favorite => <FavoriteTile key={String(favorite.id)} {...favorite} />)
+    return <List favorites={newFavorites} />
   }
 
-  return favorites.map(favorite => <FavoriteTile key={String(favorite.id)} {...favorite} />)
+  return <List favorites={favorites} />
+}
+
+function List({ favorites }) {
+  return (
+    <Content>
+      {favorites.map(favorite => (
+        <FavoriteTile key={String(favorite.id)} {...favorite} />
+      ))}
+    </Content>
+  )
 }

@@ -37,7 +37,7 @@ export function FavoriteForm({ onSubmit }) {
 
       <Input
         {...tags.input}
-        placeholder="Tags"
+        placeholder="Tags (with spaces)"
         name="tags"
         error={tags.meta.touched && tags.meta.error}
       />
