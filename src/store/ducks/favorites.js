@@ -40,7 +40,7 @@ export default function Favorites(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Types.ADD_FAVORITE: {
       const { title, link, tags } = action.payload.favorite
-      const id = state.favorites.length + 1
+      const id = Date.now()
 
       const fixTags = [...new Set(tags.toUpperCase().split(' '))]
       const favoriteWithId = { id, title, link, tags: fixTags }
