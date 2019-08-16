@@ -1,5 +1,5 @@
 import React from 'react'
-import { Magnifier } from './styles'
+import { Magnifier, Add } from './styles'
 import { Container } from '../shared/shared.styles'
 import { Actions } from '../../../../store/ducks/search'
 import { Actions as FavoriteActions } from '../../../../store/ducks/favorites'
@@ -12,6 +12,7 @@ export function AddFavorite() {
   return (
     <Container>
       <Magnifier onClick={() => toggleSearch(true)} />
+      <Add />
 
       <FavoriteForm onSubmit={addFavorite} />
     </Container>

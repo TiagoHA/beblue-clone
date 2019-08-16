@@ -8,6 +8,7 @@ export function FavoriteForm({ onSubmit }) {
   const onSubmitAndReset = values => {
     onSubmit(values)
     setTimeout(form.reset)
+    setTimeout(form.initialize)
   }
 
   const { form, handleSubmit, submitting } = useForm({
@@ -20,11 +21,7 @@ export function FavoriteForm({ onSubmit }) {
   const tags = useField('tags', form)
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <FormButton disabled={submitting}>
-        <Add />
-      </FormButton>
-
+    <Form id="favoriteForm" onSubmit={handleSubmit}>
       <Input
         {...title.input}
         placeholder="Title"
