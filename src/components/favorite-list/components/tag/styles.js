@@ -4,7 +4,7 @@ export const TagContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 5px;
+  margin: 5px 0;
 `
 
 export const ButtonDelete = styled.div`

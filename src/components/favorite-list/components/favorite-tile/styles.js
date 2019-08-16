@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   justify-content: row;
-  margin: 10px 10px 5px 10px;
+  margin: 10px;
   padding-bottom: 10px;
   min-height: 70px;
   max-width: 100%;
