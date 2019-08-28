@@ -1,5 +1,5 @@
 import React from 'react'
-import { Actions } from '../../../../store/ducks/favorites'
+import { ActionsCreator } from '../../../../store/ducks/favorites'
 import Del from '../../../../assets/SVG/X.svg'
 import { TagContainer, ButtonDelete } from './styles'
 
@@ -14,7 +14,7 @@ export function TagsList({ tags, id }) {
 }
 
 export function Tag({ id, tag }) {
-  const { deleteTag } = Actions()
+  const { deleteTag } = ActionsCreator()
 
   return (
     <ButtonDelete>
