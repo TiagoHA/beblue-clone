@@ -1,11 +1,11 @@
 import React from 'react'
 import { Magnifier, Add } from './styles'
 import { Container, Input, Icons } from '../shared/shared.styles'
-import { Actions } from '../../../../store/ducks/search'
+import { ActionsCreator } from '../../../../store/ducks/search'
 import { useSelector } from 'react-redux'
 
 export function Search() {
-  const { toggleSearch, onChangeSearch } = Actions()
+  const { toggleSearch, onChangeSearch } = ActionsCreator()
   const { search } = useSelector(state => state.searchStore)
   const clearSearch = () => onChangeSearch('')
 

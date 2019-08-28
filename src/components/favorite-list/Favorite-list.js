@@ -8,14 +8,7 @@ export function FavoritesList() {
   const { search } = useSelector(state => state.searchStore)
 
   if (search.length) {
-    const hasSearch = tag => {
-      if (tag.search(search.toUpperCase()) >= 0) return tag
-    }
-    const favoritesWithSearch = fav => ({
-      ...fav,
-      search: fav.tags.filter(hasSearch).length > 0,
-    })
-    const newFavorites = favorites.map(favoritesWithSearch).filter(fav => fav.search)
+    const newFavorites = filter(favorites, search);
 
     return <List favorites={newFavorites} />
   }
@@ -31,4 +24,16 @@ function List({ favorites }) {
       ))}
     </Content>
   )
+}
+
+function filter(favorites, search){
+  const hasSearch = tag => {
+    if (tag.search(search.toUpperCase()) >= 0) return tag
+  }
+  const favoritesWithSearch = fav => ({
+    ...fav,
+    search: fav.tags.filter(hasSearch).length > 0,
+  })
+  const newFavorites = favorites.map(favoritesWithSearch).filter(fav => fav.search)
+  return newFavorites
 }

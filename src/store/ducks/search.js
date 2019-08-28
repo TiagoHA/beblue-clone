@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 export const Types = {
   SEARCH_BOOKMARKS: 'search/SEARCH_BOOKMARKS',
@@ -32,10 +32,14 @@ export default function Search(state = INITIAL_STATE, action) {
     case Types.VISIBLE: {
       const { visibility } = action.payload
 
-      return {
-        ...state,
-        visibility,
+      if (visibility === true || visibility === false) {
+        return {
+          ...state,
+          visibility,
+        }
       }
+
+      return { ...state, visibility: !state.visibility }
     }
 
     default:
@@ -43,10 +47,13 @@ export default function Search(state = INITIAL_STATE, action) {
   }
 }
 
-export function Actions() {
+export function ActionsCreator() {
   const dispatch = useDispatch()
-  const { visibility: storeVisibility } = useSelector(state => state.searchStore)
 
+  return Actions(dispatch)
+}
+
+export function Actions(dispatch) {
   const Actions = {
     onChangeSearch: search =>
       dispatch({
@@ -62,19 +69,12 @@ export function Actions() {
     toggleSearch: visibility => {
       Actions.clearSearch()
 
-      if (visibility === true || visibility === false) {
-        return dispatch({
-          type: Types.VISIBLE,
-          payload: { visibility },
-        })
-      }
-
-      return dispatch({
+      dispatch({
         type: Types.VISIBLE,
-        payload: { visibility: !storeVisibility },
+        payload: { visibility },
       })
     },
   }
 
-  return Actions
+  return Actions;
 }

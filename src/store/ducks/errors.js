@@ -24,9 +24,14 @@ export default function error(state = INITIAL_STATE, action) {
   }
 }
 
-export function Actions() {
+
+export function ActionsCreator() {
   const dispatch = useDispatch()
 
+  return Actions(dispatch)
+}
+
+export function Actions(dispatch) {
   const Actions = {
     setError: (type, message) =>
       dispatch({
@@ -40,5 +45,5 @@ export function Actions() {
       }),
   }
 
-  return Actions
+  return Actions;
 }

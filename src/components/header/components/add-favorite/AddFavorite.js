@@ -1,13 +1,13 @@
 import React from 'react'
 import { Magnifier, Add } from './styles'
 import { Container, Icons } from '../shared/shared.styles'
-import { Actions } from '../../../../store/ducks/search'
-import { Actions as FavoriteActions } from '../../../../store/ducks/favorites'
+import { ActionsCreator } from '../../../../store/ducks/search'
+import { ActionsCreator as FavoriteActionsCreator } from '../../../../store/ducks/favorites'
 import { FavoriteForm } from './components/Form/Form'
 
 export function AddFavorite() {
-  const { toggleSearch } = Actions()
-  const { addFavorite } = FavoriteActions()
+  const { toggleSearch } = ActionsCreator()
+  const { addFavorite } = FavoriteActionsCreator()
 
   return (
     <Container>

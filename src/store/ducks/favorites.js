@@ -83,9 +83,13 @@ export default function Favorites(state = INITIAL_STATE, action) {
   }
 }
 
-export function Actions() {
+export function ActionsCreator() {
   const dispatch = useDispatch()
 
+  return Actions(dispatch)
+}
+
+export function Actions(dispatch) {
   const Actions = {
     addFavorite: favorite => {
       dispatch({
@@ -107,5 +111,5 @@ export function Actions() {
       }),
   }
 
-  return Actions
+  return Actions;
 }
