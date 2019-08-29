@@ -30,7 +30,9 @@ export const Row = styled.div`
   flex: ${props => (props.full ? 1 : 0)};
 `
 
-export const Link = styled.a`
+export const Link = styled.a.attrs({
+  target: '_blank',
+})`
   text-decoration: none;
   color: #078fff;
   margin-bottom: 5px;
