@@ -1,7 +1,7 @@
 import React from 'react'
 import { Magnifier, Add } from './styles'
 import { Container, Input, Icons } from '../shared/shared.styles'
-import { ActionsCreator } from '../../../../store/ducks/search'
+import { ActionsCreator } from 'store/ducks/search'
 import { useSelector } from 'react-redux'
 
 export function Search() {

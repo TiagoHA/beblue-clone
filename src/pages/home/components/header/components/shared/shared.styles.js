@@ -1,5 +1,5 @@
-import lupa from '../../../../assets/SVG/Lupa copy.svg'
-import add from '../../../../assets/SVG/Adicionar.svg'
+import lupa from '../../../../../../assets/SVG/Lupa copy.svg'
+import add from '../../../../../../assets/SVG/Adicionar.svg'
 import styled, { css } from 'styled-components'
 
 export const Container = styled.div`

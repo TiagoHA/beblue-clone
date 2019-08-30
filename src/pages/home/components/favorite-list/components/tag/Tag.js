@@ -1,6 +1,6 @@
 import React from 'react'
-import { ActionsCreator } from '../../../../store/ducks/favorites'
-import Del from '../../../../assets/SVG/X.svg'
+import { ActionsCreator } from '../../../../../../store/ducks/favorites'
+import Del from '../../../../../../assets/SVG/X.svg'
 import { TagContainer, ButtonDelete } from './styles'
 
 export function TagsList({ tags, id }) {

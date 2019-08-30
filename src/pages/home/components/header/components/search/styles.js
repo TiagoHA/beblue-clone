@@ -1,5 +1,5 @@
-import lupa from '../../../../assets/SVG/Lupa.svg'
-import add from '../../../../assets/SVG/Adicionar copy.svg'
+import lupa from '../../../../../../assets/SVG/Lupa.svg'
+import add from '../../../../../../assets/SVG/Adicionar copy.svg'
 import styled from 'styled-components'
 import { Icon } from '../shared/shared.styles'
 
